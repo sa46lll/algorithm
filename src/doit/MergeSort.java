@@ -2,7 +2,7 @@ package doit;
 
 import java.util.Scanner;
 
-public class MerseSort {
+public class MergeSort {
     static int[] buff;	// 작업용 배열
 
     // a[left] ~ a[right]를 재귀적으로 병합 정렬
