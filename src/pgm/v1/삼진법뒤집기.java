@@ -1,8 +1,8 @@
-package programmers.level1;
+package pgm.v1;
 
 import java.util.ArrayList;
 
-public class reverse_ternary {
+public class 삼진법뒤집기 {
     public static void main(String[] args) {
         Solution4 sol = new Solution4();
         int result = sol.solution(45);

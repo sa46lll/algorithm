@@ -1,8 +1,8 @@
-package programmers.lesson.List;
+package pgm.list;
 
 import java.util.Arrays;
 
-public class Array {
+public class Basic_array {
     public static void main(String[] args) {
         int[] arr = new int[5];  // 0으로 초기화
         String[] strs = new String[5];  // null 초기화

@@ -1,10 +1,10 @@
-package programmers.level1;
+package pgm.v1;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-class random_sum {
+class 두개뽑아서더하기 {
     public static void main(String[] args) throws IOException {
         Solution3 sol = new Solution3();
         int[] a = {2,1,3,4,1};

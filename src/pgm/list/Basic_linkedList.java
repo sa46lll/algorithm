@@ -1,8 +1,8 @@
-package programmers.lesson.List;
+package pgm.list;
 
 import java.util.LinkedList;
 
-public class LinkedList_ {
+public class Basic_linkedList {
     public static void main(String[] args) {
         LinkedList<Integer> list = new LinkedList<>();
         list.add(1);

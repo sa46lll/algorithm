@@ -1,7 +1,7 @@
-package programmers.level1;
+package pgm.v1;
 
 import java.io.IOException;
-public class Hashad {
+public class 하샤드수 {
     public static void main(String[] args) throws IOException {
         Solution sol = new Solution();
         boolean result = sol.solution(10);

@@ -1,10 +1,10 @@
-package programmers.level1;
+package pgm.v1;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.util.Arrays;
-public class PRO_완주하지못한선수 {
+public class 완주하지못한선수 {
  	static String[] participant = { "leo", "kiki", "eden" };
  	static String[] completion = { "eden", "kiki" };
 

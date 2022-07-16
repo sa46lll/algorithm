@@ -1,3 +1,5 @@
+package pgm.v1;
+
 import java.util.Arrays;
 
 public class Coding {

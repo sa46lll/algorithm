@@ -1,9 +1,8 @@
-package programmers.level1;
+package pgm.v1;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
-public class dot_product {
+public class 내적 {
     public static void main(String[] args) throws IOException {
         Solution2 sol = new Solution2();
         int[] a = {1, 2, 3, 4};

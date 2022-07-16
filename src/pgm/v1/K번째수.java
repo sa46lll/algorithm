@@ -1,10 +1,10 @@
-package programmers.level1;
+package pgm.v1;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
-public class PRO_K번째수 {
+public class K번째수 {
     public static void main(String[] args) {
         Solution5 sol = new Solution5();
         int[] array = {1, 5, 2, 6, 3, 7, 4};
