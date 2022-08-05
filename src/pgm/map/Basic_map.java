@@ -39,9 +39,9 @@ public class Basic_map {
 //        Map<String, Integer> map = new ConcurrentHashMap<>();
 
         // 데이터 생성
-        map.put(new MyData(1), 1);
-        map.put(new MyData(2), 2);
-        map.putIfAbsent(new MyData(1), 3); // 키 값이 없을때 생성
+        map.put(new MyData(1), 11);
+        map.put(new MyData(2), 12);
+        map.putIfAbsent(new MyData(1), 13); // 키 값이 없을때 생성
 
         method1(map);
     }
@@ -51,10 +51,10 @@ public class Basic_map {
         System.out.println(map.get(new MyData(1))); // 없으면 null
         System.out.println(map.getOrDefault(new MyData(3), -1));
         // 데이터 삭제
-        System.out.println(map.remove(new MyData(1)));
-        System.out.println(map.remove(new MyData(1), 3)); // value가 일치하지 않으면 그대로 (false)
+        map.remove(new MyData(1));
+        map.remove(new MyData(1), 13); // value가 일치하지 않으면 그대로 (false)
         // 데이터 치환
-        map.replace(new MyData(1), 1, 11); // oldValue가 일치하지 않으면 그대로
+        map.replace(new MyData(1), 11, 14); // oldValue가 일치하지 않으면 그대로
 
         System.out.println(map.values());
         System.out.println(map.keySet());
