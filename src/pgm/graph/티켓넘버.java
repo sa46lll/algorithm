@@ -1,4 +1,4 @@
-package pgm.v2;
+package pgm.graph;
 
 public class 티켓넘버 {
     static int solution(int[] numbers, int target) {
