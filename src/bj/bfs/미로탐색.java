@@ -32,7 +32,7 @@ public class 미로탐색 {
         System.out.println(maze[n - 1][m - 1]);
     }
 
-    static void bfs() {
+    private static void bfs() {
         Queue<Node> queue = new LinkedList<>();
         queue.offer(new Node(0, 0));
         visited[0][0] = true;
