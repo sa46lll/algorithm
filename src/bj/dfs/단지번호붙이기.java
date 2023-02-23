@@ -1,9 +1,9 @@
-package bj.bfs;
+package bj.dfs;
 
 import java.io.*;
 import java.util.*;
 
-public class 단지번호붙이기2 {
+public class 단지번호붙이기 {
 
     static int N;
     static int[][] map;
@@ -29,7 +29,7 @@ public class 단지번호붙이기2 {
             for (int j = 0; j < N; j++) {
                 if (map[i][j] == 1 && !visited[i][j]) {
                     size = 1;
-                    bfs(i, j);
+                    dfs(i, j);
                     list.add(size);
                 }
             }
@@ -39,36 +39,19 @@ public class 단지번호붙이기2 {
         list.stream().forEach(System.out::println);
     }
 
-    private static void bfs(int x, int y) {
-        Queue<Node4> queue = new LinkedList<>();
-        queue.offer(new Node4(x, y));
+    private static void dfs(int x, int y) {
         visited[x][y] = true;
-        while (!queue.isEmpty()) {
-            Node4 node = queue.poll();
-            for (int i = 0; i < dx.length; i++) {
-                int nextX = node.x + dx[i];
-                int nextY = node.y + dy[i];
-                if (checkValidation(nextX, nextY) && !visited[nextX][nextY] && map[nextX][nextY] == 1) {
-                    queue.offer(new Node4(nextX, nextY));
-                    visited[nextX][nextY] = true;
-                    size++;
-                }
+        for (int i = 0; i < dx.length; i++) {
+            int nextX = x + dx[i];
+            int nextY = y + dy[i];
+            if (checkValidation(nextX, nextY) && !visited[nextX][nextY] && map[nextX][nextY] == 1) {
+                size++;
+                dfs(nextX, nextY);
             }
         }
     }
 
     private static boolean checkValidation(int x, int y) {
         return x >= 0 && x < N && y >= 0 && y < N;
-    }
-}
-
-class Node4 {
-
-    int x;
-    int y;
-
-    Node4(int x, int y) {
-        this.x = x;
-        this.y = y;
     }
 }

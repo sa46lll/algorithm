@@ -40,18 +40,35 @@ public class 단지번호붙이기 {
     }
 
     private static void bfs(int x, int y) {
+        Queue<Node4> queue = new LinkedList<>();
+        queue.offer(new Node4(x, y));
         visited[x][y] = true;
-        for (int i = 0; i < dx.length; i++) {
-            int nextX = x + dx[i];
-            int nextY = y + dy[i];
-            if (checkValidation(nextX, nextY) && !visited[nextX][nextY] && map[nextX][nextY] == 1) {
-                size++;
-                bfs(nextX, nextY);
+        while (!queue.isEmpty()) {
+            Node4 node = queue.poll();
+            for (int i = 0; i < dx.length; i++) {
+                int nextX = node.x + dx[i];
+                int nextY = node.y + dy[i];
+                if (checkValidation(nextX, nextY) && !visited[nextX][nextY] && map[nextX][nextY] == 1) {
+                    queue.offer(new Node4(nextX, nextY));
+                    visited[nextX][nextY] = true;
+                    size++;
+                }
             }
         }
     }
 
     private static boolean checkValidation(int x, int y) {
         return x >= 0 && x < N && y >= 0 && y < N;
+    }
+}
+
+class Node4 {
+
+    int x;
+    int y;
+
+    Node4(int x, int y) {
+        this.x = x;
+        this.y = y;
     }
 }

@@ -54,18 +54,35 @@ public class 영역구하기 {
     }
 
     private static void bfs(int x, int y) {
+        Queue<Node3> queue = new LinkedList<>();
+        queue.add(new Node3(x, y));
         visited[x][y] = true;
         area++;
-        for (int i = 0; i < dx.length; i++) {
-            int nextX = x + dx[i];
-            int nextY = y + dy[i];
-            if (checkValidation(nextX, nextY) && map[nextX][nextY] == 0 && !visited[nextX][nextY]) {
-                bfs(nextX, nextY);
+        while (!queue.isEmpty()) {
+            Node3 node = queue.poll();
+            for (int i = 0; i < dx.length; i++) {
+                int nextX = node.x + dx[i];
+                int nextY = node.y + dy[i];
+                if (checkValidation(nextX, nextY) && map[nextX][nextY] == 0 && !visited[nextX][nextY]) {
+                    queue.offer(new Node3(nextX, nextY));
+                    visited[nextX][nextY] = true;
+                    area++;
+                }
             }
         }
     }
 
     private static  boolean checkValidation(int x, int y) {
         return x >= 0 && x < n && y >= 0 && y < m;
+    }
+}
+
+class Node3 {
+    int x;
+    int y;
+
+    Node3(int x, int y) {
+        this.x = x;
+        this.y = y;
     }
 }

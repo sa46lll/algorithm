@@ -1,9 +1,9 @@
-package bj.bfs;
+package bj.dfs;
 
 import java.io.*;
 import java.util.*;
 
-public class 영역구하기2 {
+public class 영역구하기 {
 
     static int m;
     static int n;
@@ -43,7 +43,7 @@ public class 영역구하기2 {
                 if (map[i][j] == 0 && !visited[i][j]) {
                     count++;
                     area = 0;
-                    bfs(i, j);
+                    dfs(i, j);
                     result.add(area);
                 }
             }
@@ -53,36 +53,19 @@ public class 영역구하기2 {
         result.forEach(i -> System.out.print(i + " "));
     }
 
-    private static void bfs(int x, int y) {
-        Queue<Node3> queue = new LinkedList<>();
-        queue.add(new Node3(x, y));
+    private static void dfs(int x, int y) {
         visited[x][y] = true;
         area++;
-        while (!queue.isEmpty()) {
-            Node3 node = queue.poll();
-            for (int i = 0; i < dx.length; i++) {
-                int nextX = node.x + dx[i];
-                int nextY = node.y + dy[i];
-                if (checkValidation(nextX, nextY) && map[nextX][nextY] == 0 && !visited[nextX][nextY]) {
-                    queue.offer(new Node3(nextX, nextY));
-                    visited[nextX][nextY] = true;
-                    area++;
-                }
+        for (int i = 0; i < dx.length; i++) {
+            int nextX = x + dx[i];
+            int nextY = y + dy[i];
+            if (checkValidation(nextX, nextY) && map[nextX][nextY] == 0 && !visited[nextX][nextY]) {
+                dfs(nextX, nextY);
             }
         }
     }
 
     private static  boolean checkValidation(int x, int y) {
         return x >= 0 && x < n && y >= 0 && y < m;
-    }
-}
-
-class Node3 {
-    int x;
-    int y;
-
-    Node3(int x, int y) {
-        this.x = x;
-        this.y = y;
     }
 }
