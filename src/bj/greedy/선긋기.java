@@ -44,7 +44,7 @@ class Line implements Comparable<Line> {
     int start;
     int end;
 
-    public Line(int start, int end) {
+    Line(int start, int end) {
         this.start = start;
         this.end = end;
     }
