@@ -1,4 +1,4 @@
-package bj.gold5;
+package bj.binarysearch;
 
 import java.io.*;
 import java.util.Arrays;
