@@ -1,4 +1,4 @@
-package bj.binarysearch;
+package bj.twopointer;
 
 import java.io.*;
 import java.util.*;
