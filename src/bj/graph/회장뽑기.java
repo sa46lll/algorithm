@@ -6,6 +6,7 @@ import java.util.*;
 /**
  * 플로이드 연산 (floyd-warshall)
  * : 모든 정점에서 모든 정점으로의 최단 경로를 구한다.
+ * : O(n) = n^3
  */
 public class 회장뽑기 {
 
@@ -47,6 +48,10 @@ public class 회장뽑기 {
         }
     }
 
+    /**
+     * 가운데 경로 i를 고정하고, 출발점 j와 도착점 k를 변경한다.
+     * j -> k로 가는 경로와 j -> i -> k로 가는 경로 중 더 짧은 경로를 선택한다.
+     */
     private static void floydWarshall() {
         for (int i = 0; i < graph.length; i++) {
             for (int j = 0; j < graph.length; j++) {
