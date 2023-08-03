@@ -19,7 +19,7 @@ public class 트리의부모찾기 {
          * v2) bfs
          */
         dfs(tree[1]);
-        
+
         displayParentNodeNumber();
     }
 
@@ -77,6 +77,7 @@ public class 트리의부모찾기 {
     }
 
     static class Node {
+
         int root;
         boolean visited;
         List<Node> children = new ArrayList<>();
