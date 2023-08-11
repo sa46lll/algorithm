@@ -3,6 +3,9 @@ package bj.mst;
 import java.io.*;
 import java.util.*;
 
+/**
+ * 크루스칼 알고리즘
+ */
 public class 도시분할계획 {
 
     static int numberOfHouses;
