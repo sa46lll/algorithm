@@ -37,6 +37,14 @@ public class 플로이드 {
         }
     }
 
+    private static void initGraph() { // i == j인 경우는 0으로, 나머지는 INF로 초기화
+        for (int i = 0; i < graph.length; i++) {
+            for (int j = 0; j < graph[0].length; j++) {
+                graph[i][j] = i == j ? 0 : INF;
+            }
+        }
+    }
+
     private static void floydWarshall() {
         for (int i = 1; i <= numOfCities; i++) {
             for (int j = 1; j <= numOfCities; j++) {
@@ -58,13 +66,5 @@ public class 플로이드 {
             sb.append("\n");
         }
         System.out.println(sb);
-    }
-
-    private static void initGraph() { // i == j인 경우는 0으로, 나머지는 INF로 초기화
-        for (int i = 0; i < graph.length; i++) {
-            for (int j = 0; j < graph[0].length; j++) {
-                graph[i][j] = i == j ? 0 : INF;
-            }
-        }
     }
 }
