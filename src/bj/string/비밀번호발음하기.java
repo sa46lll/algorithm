@@ -5,8 +5,8 @@ import java.util.*;
 public class 비밀번호발음하기 {
 
     static final String VOWELS = "aeiou";
-    static final String OUTPUT_VALIDATE = "<%s> is acceptable.";
-    static final String OUTPUT_INVALIDATE = "<%s> is not acceptable.";
+    static final String PASSWORD_VALIDATE_OUTPUT = "<%s> is acceptable.";
+    static final String PASSWORD_INVALIDATE_OUTPUT = "<%s> is not acceptable.";
     static List<String> passwords;
 
     public static void main(String[] args) {
@@ -15,12 +15,24 @@ public class 비밀번호발음하기 {
         StringBuilder sb = new StringBuilder();
         for (String password : passwords) {
             if (validatePassword(password)) {
-                sb.append(String.format(OUTPUT_VALIDATE, password)).append("\n");
+                sb.append(String.format(PASSWORD_VALIDATE_OUTPUT, password)).append("\n");
                 continue;
             }
-            sb.append(String.format(OUTPUT_INVALIDATE, password)).append("\n");
+            sb.append(String.format(PASSWORD_INVALIDATE_OUTPUT, password)).append("\n");
         }
         System.out.println(sb);
+    }
+
+    private static void promptFromUserInput() {
+        Scanner sc = new Scanner(System.in);
+        passwords = new ArrayList<>();
+        while (true) {
+            String input = sc.next();
+            if (input.equals("end")) {
+                break;
+            }
+            passwords.add(input);
+        }
     }
 
     private static boolean validatePassword(String password) {
@@ -40,7 +52,7 @@ public class 비밀번호발음하기 {
             if (consecutiveVowels >= 3 || consecutiveConsonants >= 3) {
                 return false;
             }
-            if (lastChar == c && c != 'e' && c != 'o') {
+            if (lastChar == c && !isExceptionCase(c)) {
                 return false;
             }
             lastChar = c;
@@ -51,15 +63,7 @@ public class 비밀번호발음하기 {
         return true;
     }
 
-    private static void promptFromUserInput() {
-        Scanner sc = new Scanner(System.in);
-        passwords = new ArrayList<>();
-        while (true) {
-            String input = sc.next();
-            if (input.equals("end")) {
-                break;
-            }
-            passwords.add(input);
-        }
+    private static boolean isExceptionCase(char c) {
+        return c != 'e' && c != 'o';
     }
 }
