@@ -1,6 +1,6 @@
-package pgm.dfs;
+package pgm.bfs;
 
-import static pgm.dfs.게임맵최단거리.Solution.solution;
+import static pgm.bfs.게임맵최단거리.Solution.solution;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -18,7 +18,7 @@ public class 게임맵최단거리 {
             solutionMaps = maps;
             visited = new int[solutionMaps.length][solutionMaps[0].length];
 
-            bfs(maps);
+            bfs();
             int result = visited[solutionMaps.length - 1][solutionMaps[0].length - 1]; // 최종 목적지
             return result == 0 ? -1 : result;
         }
