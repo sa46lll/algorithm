@@ -1,4 +1,4 @@
-package bj.dfs;
+package bj.graph;
 
 import java.io.*;
 import java.util.*;
