@@ -1,4 +1,4 @@
-package pgm.dfs;
+package pgm.backtracking;
 
 public class 단어변환 {
 

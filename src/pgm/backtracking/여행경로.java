@@ -1,4 +1,4 @@
-package pgm.dfs;
+package pgm.backtracking;
 
 import java.util.ArrayList;
 import java.util.Collections;
