@@ -2,35 +2,34 @@ package bj.backtracking;
 
 import java.util.*;
 
-public class N과M3 {
+public class N과M4 {
 
     private int n;
     private int m;
-    private int[] sequence;
+    private int[] sequence; // 현재 순열
     private final StringBuilder result = new StringBuilder();
 
     public static void main(String[] args) {
-        new N과M3().solution();
+        new N과M4().solution();
     }
 
     private void solution() {
         initializeFromUserInput();
-        dfs(0);
+        generateSequence(1, 0);
         System.out.println(result);
     }
 
-    private void dfs(int depth) {
+    private void generateSequence(int startIndex, int depth) {
         if (depth == m) {
-            for (int s : sequence) {
-                result.append(s).append(" ");
+            for (int i : sequence) {
+                result.append(i).append(" ");
             }
             result.append("\n");
             return;
         }
-
-        for (int i = 1; i <= n; i++) {
+        for (int i = startIndex; i <= n; i++) {
             sequence[depth] = i;
-            dfs(depth + 1);
+            generateSequence(i, depth + 1);
         }
     }
 
