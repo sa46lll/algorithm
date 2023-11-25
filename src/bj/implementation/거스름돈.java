@@ -4,7 +4,7 @@ import java.util.*;
 
 public class 거스름돈 {
 
-    private static int[] changes = {500, 100, 50, 10, 5, 1};
+    private static final int[] changes = {500, 100, 50, 10, 5, 1};
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
