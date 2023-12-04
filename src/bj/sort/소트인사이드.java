@@ -7,22 +7,21 @@ public class 소트인사이드 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        int[] arr = new int[Integer.toString(n).length()];
+        List<Integer> list = new ArrayList<>();
 
-        int idx = 0;
         while (n > 0) {
-            arr[idx++] = n % 10;
+            list.add(n % 10);
             n /= 10;
         }
 
-        Arrays.sort(arr);
-        printResult(arr);
+        Collections.sort(list);
+        printResult(list);
     }
 
-    private static void printResult(int[] arr) {
+    private static void printResult(List<Integer> list) {
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < arr.length; i++) {
-            sb.append(arr[arr.length - i - 1]);
+        for (int i = 0; i < list.size(); i++) {
+            sb.append(list.get(list.size() - i - 1));
         }
         System.out.println(sb);
     }
