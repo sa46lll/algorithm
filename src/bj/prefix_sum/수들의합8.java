@@ -1,4 +1,4 @@
-package bj.two_pointer;
+package bj.prefix_sum;
 
 import java.io.*;
 import java.util.*;
