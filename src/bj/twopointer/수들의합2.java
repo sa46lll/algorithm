@@ -8,7 +8,7 @@ public class 수들의합2 {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int m = sc.nextInt();
-        int[] arr = new int[n];
+        int[] arr = new int[n + 1];
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
@@ -25,20 +25,14 @@ public class 수들의합2 {
             }
             if (sum < m) { // 작으면 간격을 넓힘
                 e++;
-                if (e == n) { // ?
-                    break;
-                }
                 sum += arr[e];
                 continue;
             }
             sum -= arr[s];
             s++;
             e++;
-            count++;
-            if (e == n) { // ?
-                break;
-            }
             sum += arr[e];
+            count++;
         }
 
         System.out.println(count);
